@@ -1,0 +1,1 @@
+{"name":"Local: cat_doi","url":"d:\\Learn Java\\cat_doi.java","tests":[{"id":1660789915055,"input":"3\n1890\n3681\n8919","output":""},{"id":1660790683082,"input":"1\n0000","output":""},{"id":1660791280728,"input":"1\n0111","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\cat_doi.java","group":"local","local":true}
