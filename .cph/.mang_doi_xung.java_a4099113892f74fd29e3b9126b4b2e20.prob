@@ -1,0 +1,1 @@
+{"name":"Local: mang_doi_xung","url":"d:\\Learn Java\\mang_doi_xung.java","tests":[{"id":1661076376562,"input":"2\n\n4\n\n1 4 4 1\n\n5\n\n1 5 5 5 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\mang_doi_xung.java","group":"local","local":true}

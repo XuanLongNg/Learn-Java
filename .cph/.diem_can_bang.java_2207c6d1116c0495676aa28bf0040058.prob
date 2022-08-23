@@ -1,0 +1,1 @@
+{"name":"Local: diem_can_bang","url":"d:\\Learn Java\\diem_can_bang.java","tests":[{"id":1661171031623,"input":"2\n\n7\n\n-7 1 5 2 -4 3 0\n\n5\n\n1 2 3 4 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\diem_can_bang.java","group":"local","local":true}

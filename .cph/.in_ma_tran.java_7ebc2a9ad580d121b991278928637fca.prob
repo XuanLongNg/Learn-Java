@@ -1,0 +1,1 @@
+{"name":"Local: in_ma_tran","url":"d:\\Learn Java\\in_ma_tran.java","tests":[{"id":1661240129437,"input":"2\n3\n45 48 54 21 89 87 70 78 15\n2\n25 27 23 21","output":"45 48 54 87 89 21 70 78 15\n25 27 21 23"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\in_ma_tran.java","group":"local","local":true}

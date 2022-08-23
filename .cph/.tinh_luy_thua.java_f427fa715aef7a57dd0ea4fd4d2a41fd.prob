@@ -1,0 +1,1 @@
+{"name":"Local: tinh_luy_thua","url":"d:\\Learn Java\\tinh_luy_thua.java","tests":[{"id":1661055515720,"input":"2 3\n\n2 4\n\n3 2\n\n0 0","output":""},{"id":1661056440141,"input":"1000231000 12345678932032\n0 0","output":"864731644"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\tinh_luy_thua.java","group":"local","local":true}
