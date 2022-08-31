@@ -1,0 +1,1 @@
+{"name":"Local: python file","url":"d:\\Learn Java\\python file.py","tests":[{"id":1661616103896,"input":"abc.py","output":""},{"id":1661617357596,"input":"_.PY","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\python file.py","group":"local","local":true}

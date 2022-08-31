@@ -13,16 +13,14 @@ public class xau_nhi_phan {
 
     public static long xau(int n, long k) {
         // System.out.println(n + " " + k);
-        if (n == 3 && k == 2)
-            return 1;
-        else if (n == 1)
+        if (n == 1)
             return 0;
         else if (n == 2)
             return 1;
-        if (k > fibo[n - 2]) {
-            return xau(n - 1, k - fibo[n - 2]);
-        } else {
+        if (k <= fibo[n - 2]) {
             return xau(n - 2, k);
+        } else {
+            return xau(n - 1, k - fibo[n - 2]);
         }
     }
 
@@ -31,7 +29,8 @@ public class xau_nhi_phan {
         int t = input.nextInt();
         Fibonacci();
         while (t-- > 0) {
-            int n = input.nextInt(), k = input.nextInt();
+            int n = input.nextInt();
+            long k = input.nextLong();
             System.out.println(xau(n, k));
         }
     }
