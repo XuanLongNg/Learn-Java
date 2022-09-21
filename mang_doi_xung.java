@@ -1,6 +1,15 @@
 import java.util.Scanner;
 
 public class mang_doi_xung {
+    public static boolean check(int[] arr, int n) {
+        for (int i = 0; i < n / 2; i++) {
+            if (arr[i] != arr[n - i - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int t = input.nextInt();
@@ -10,14 +19,7 @@ public class mang_doi_xung {
             for (int i = 0; i < n; i++) {
                 arr[i] = input.nextInt();
             }
-            boolean check = true;
-            for (int i = 0; i < n / 2; i++) {
-                if (arr[i] != arr[n - i - 1]) {
-                    check = false;
-                    break;
-                }
-            }
-            if (check) {
+            if (check(arr, n)) {
                 System.out.println("YES");
             } else
                 System.out.println("NO");

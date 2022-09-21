@@ -1,0 +1,1 @@
+{"name":"Local: bai_toan_tinh_cong","url":"d:\\Learn Java\\bai_toan_tinh_cong.java","tests":[{"id":1663468775753,"input":"Bui Thi Trang\n45000\n23\nPGD","output":"NV01 Bui Thi Trang 1035000 103500 200000 1338500"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\bai_toan_tinh_cong.java","group":"local","local":true}

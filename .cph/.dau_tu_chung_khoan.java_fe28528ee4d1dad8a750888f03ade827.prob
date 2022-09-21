@@ -1,0 +1,1 @@
+{"name":"Local: dau_tu_chung_khoan","url":"d:\\Learn Java\\dau_tu_chung_khoan.java","tests":[{"id":1663309820621,"input":"1\n7\n100 80 60 70 60 75 85","output":"1 1 1 2 1 4 6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\dau_tu_chung_khoan.java","group":"local","local":true}

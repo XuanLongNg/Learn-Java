@@ -1,0 +1,1 @@
+{"name":"Local: go_ban_phim","url":"d:\\Learn Java\\go_ban_phim.java","tests":[{"id":1663312394473,"input":"<<PI<T>>>>><<<<<<<<<>Ta--------","output":""},{"id":1663314705038,"input":"<<PI<T>>Ta-","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\go_ban_phim.java","group":"local","local":true}

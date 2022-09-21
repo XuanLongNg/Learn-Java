@@ -1,0 +1,1 @@
+{"name":"Local: kiem_tra_day_ngoac_dung","url":"d:\\Learn Java\\kiem_tra_day_ngoac_dung.java","tests":[{"id":1663302754972,"input":"2\n[()]{}{[()()]()}\n[(])","output":""},{"id":1663303377435,"input":"1\n)(","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\kiem_tra_day_ngoac_dung.java","group":"local","local":true}

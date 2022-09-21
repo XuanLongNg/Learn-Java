@@ -1,28 +1,21 @@
+import java.io.*;
 import java.util.*;
-import java.io.File;
-import java.io.FileNotFoundException;
 
 public class Main {
-    public static void main(String[] args) {
-        try {
-            InputStream file = new FileInputStream("DATA.IN");
-            Scanner input = new Scanner(file);
-            Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
-            while (input.hasNextLine()) {
-                String line = input.nextLine();
-                String[] tmp = line.split(" ");
-                for (String i : tmp) {
-                    if (map.containsKey(Integer.valueOf(i))) {
-                        map.put(Integer.valueOf(i), map.get(Integer.valueOf(i)) + 1);
-                    } else
-                        map.put(Integer.valueOf(i), 1);
-                }
-            }
-            for (Integer i : map.keySet()) {
-                System.out.println(i + " " + map.get(i));
-            }
-        } catch (FileNotFoundException e) {
 
+    public static void main(String[] args) throws IOException {
+        DataInputStream f = new DataInputStream(new FileInputStream("DATA.IN"));
+        Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
+        for (int i = 0; i < 100000; i++) {
+            int s = f.readInt();
+            if (map.containsKey(Integer.valueOf(s))) {
+                map.put(Integer.valueOf(s), map.get(Integer.valueOf(s)) + 1);
+            } else
+                map.put(Integer.valueOf(s), 1);
+        }
+        for (Integer i : map.keySet()) {
+            System.out.println(i + " " + map.get(i));
         }
     }
+
 }
