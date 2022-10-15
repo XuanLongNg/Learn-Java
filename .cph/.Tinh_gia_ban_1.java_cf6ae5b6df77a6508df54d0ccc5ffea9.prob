@@ -1,0 +1,1 @@
+{"name":"Local: Tinh_gia_ban_1","url":"d:\\Learn Java\\Tinh_gia_ban_1.java","tests":[{"id":1665795612113,"input":"4\nDUONG\nKG\n7500\n150\nTRUNG\nCHUC\n10000\n225\nGAO\nKG\n14000\n118\nSUA\nHOP\n48000\n430","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\Tinh_gia_ban_1.java","group":"local","local":true}

@@ -10,18 +10,14 @@ public class go_ban_phim {
         for (int i = 0; i < line.length(); i++) {
             if (line.charAt(i) == '<') {
                 if (stk1.size() > 0) {
-                    stk2.push(stk1.peek());
-                    stk1.pop();
+                    stk2.push(stk1.pop());
                 }
             } else if (line.charAt(i) == '>') {
                 if (stk2.size() > 0) {
-                    stk1.push(stk2.peek());
-                    stk2.pop();
+                    stk1.push(stk2.pop());
                 }
             } else if (line.charAt(i) == '-') {
-                if (stk2.size() > 0)
-                    stk2.pop();
-                else if (stk1.size() > 0)
+                if (stk1.size() > 0)
                     stk1.pop();
             } else {
                 stk1.push(line.charAt(i));

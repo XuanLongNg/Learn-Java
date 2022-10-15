@@ -1,0 +1,1 @@
+{"name":"Local: xau_con_lon_nhat","url":"d:\\Learn Java\\xau_con_lon_nhat.java","tests":[{"id":1664003506658,"input":"ababba","output":"bbba"},{"id":1664003509406,"input":"abbcbccacbbcbaaba","output":"cccccbba"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\xau_con_lon_nhat.java","group":"local","local":true}

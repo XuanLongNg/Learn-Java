@@ -1,0 +1,1 @@
+{"name":"Local: nhap2","url":"d:\\Learn Java\\nhap2.java","tests":[{"id":1665129648442,"input":"123\nNguyen Xuan Long\nHanoi\n3\nUSD\nsnack\n5\nUSD\nRoll Royce\n250000\nUSD\nShip\n500000","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\nhap2.java","group":"local","local":true}

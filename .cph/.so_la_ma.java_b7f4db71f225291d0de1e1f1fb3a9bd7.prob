@@ -1,0 +1,1 @@
+{"name":"Local: so_la_ma","url":"d:\\Learn Java\\so_la_ma.java","tests":[{"id":1664086764828,"input":"3\nXIX\nDC\nCD","output":"19\n600\n400"},{"id":1664093628346,"input":"1\nIII","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\so_la_ma.java","group":"local","local":true}

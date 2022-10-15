@@ -27,11 +27,11 @@ class Pair<K, V> {
         int k = (Integer) key, v = (Integer) value;
         if (k < 2 || v < 2)
             return false;
-        for (int i = 2; i < (int) Math.sqrt(k); i++) {
+        for (int i = 2; i <= (int) Math.sqrt(k); i++) {
             if (k % i == 0)
                 return false;
         }
-        for (int i = 2; i < (int) Math.sqrt(v); i++) {
+        for (int i = 2; i <= (int) Math.sqrt(v); i++) {
             if (v % i == 0)
                 return false;
         }
@@ -44,9 +44,9 @@ class Pair<K, V> {
     }
 }
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(new File("DATA.in"));
+public class lop_pair {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         while (t-- > 0) {
             int n = sc.nextInt();

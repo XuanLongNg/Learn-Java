@@ -1,3 +1,5 @@
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.*;
 import java.io.*;
 
@@ -60,8 +62,9 @@ public class Main {
         return false;
     }
 
-    public static void main(String[] args) throws IOException {
-        Scanner input = new Scanner(new File("SINHVIEN.in"));
+    public static void main(String[] args) throws IOException, ParseException, ClassNotFoundException {
+        InputStream file = new FileInputStream("SINHVIEN.in");
+        Scanner input = new Scanner(file.read());
         int n = Integer.valueOf(input.nextLine());
         List<Student> arr = new ArrayList<Student>();
         for (int i = 0; i < n; i++) {
@@ -70,16 +73,13 @@ public class Main {
         Collections.sort(arr, new Comparator<Student>() {
             @Override
             public int compare(Student o2, Student o1) {
-                String a1 = o1.getID(), a2 = o2.getID();
-                int i = a1.length() - 1, j = a2.length() - 1;
-                while (isInteger(String.valueOf(a1.charAt(i))))
-                    i--;
-                while (isInteger(String.valueOf(a2.charAt(j))))
-                    j--;
-                i++;
-                j++;
-                return Integer.valueOf(o2.getID().substring(j, o2.getID().length()))
-                        - Integer.valueOf(o1.getID().substring(i, o1.getID().length()));
+                int n = o1.getID().length(), m = o2.getID().length(), k = Math.min(n, m);
+                for (int i = 0; i < k; i++) {
+                    if ((int) o1.getID().charAt(i) != (int) (o2.getID().charAt(i)))
+                        return (int) (o1.getID().charAt(i))
+                                - (int) (o2.getID().charAt(i));
+                }
+                return n - m;
             }
         });
         for (Student i : arr) {

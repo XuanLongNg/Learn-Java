@@ -1,0 +1,1 @@
+{"name":"Local: loai_bo_100","url":"d:\\Learn Java\\loai_bo_100.java","tests":[{"id":1664096940838,"input":"2\n010010\n1011110000","output":""},{"id":1664097237920,"input":"2\n100101000\n110001010000","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\loai_bo_100.java","group":"local","local":true}

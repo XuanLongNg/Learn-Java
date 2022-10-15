@@ -1,5 +1,20 @@
 import java.util.*;
 
+class Rectange {
+    private int width;
+    private int height;
+
+    public Rectange() {
+        width = 1;
+        height = 1;
+    }
+
+    public Rectange(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+}
+
 public class nhap {
     // public static void main(String args[]) {
     // Scanner input = new Scanner(System.in);
@@ -47,15 +62,22 @@ public class nhap {
     // }
 
     // fibonacci thu n
+    // public static void main(String[] args) {
+    // Scanner input = new Scanner(System.in);
+    // long[] fibonacci = new long[92];
+    // fibonacci[0] = 1;
+    // fibonacci[1] = 1;
+    // for (int i = 2; i < 92; i++) {
+    // fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    // }
+    // int n = input.nextInt();
+    // System.out.println(fibonacci[n - 1]);
+    // }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        long[] fibonacci = new long[92];
-        fibonacci[0] = 1;
-        fibonacci[1] = 1;
-        for (int i = 2; i < 92; i++) {
-            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-        }
-        int n = input.nextInt();
-        System.out.println(fibonacci[n - 1]);
+        Currency k;
+        String n = input.nextLine();
+        k.getInstance(n);
+        System.out.println(k + " " + k.getCurrencyCode());
     }
 }
