@@ -1,0 +1,1 @@
+{"name":"Local: liet_ke_nhap_xuat_hang_theo_nhom","url":"d:\\Learn Java\\liet_ke_nhap_xuat_hang_theo_nhom.java","tests":[{"id":1665978007058,"input":"3\nA001Y\n1000\nB012N\n2500\nB003Y\n4582\nB","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\liet_ke_nhap_xuat_hang_theo_nhom.java","group":"local","local":true}
