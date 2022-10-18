@@ -18,9 +18,19 @@ class Candidate {
         chemistry = 0.0;
     }
 
+    public void chuan_hoa(String name) {
+        String[] tmp = name.split(" ");
+        name = "";
+        for (String s : tmp) {
+            s = s.toLowerCase();
+            name += s.substring(0, 1).toUpperCase() + s.substring(1) + " ";
+        }
+        this.name = name;
+    }
+
     public Candidate(String id, String name, double math, double physics, double chemistry) {
         this.id = id;
-        this.name = name;
+        chuan_hoa(name);
         this.math = math;
         this.physics = physics;
         this.chemistry = chemistry;
@@ -30,15 +40,15 @@ class Candidate {
             priorityScore = 1;
         else
             priorityScore = 2.5;
-        total = math * 2 + physics + chemistry;
-        if (total + priorityScore >= 24)
+        total = math * 2 + physics + chemistry + priorityScore;
+        if (total >= 24)
             status = "TRUNG TUYEN";
         else
             status = "TRUOT";
     }
 
     public double getTotal() {
-        return total + priorityScore;
+        return total;
     }
 
     public String getId() {
@@ -56,7 +66,7 @@ class Candidate {
             tmpTotal = String.valueOf((int) total);
         else
             tmpTotal = String.valueOf(total);
-        return id + " " + name + " " + tmpPri + " " + tmpTotal + " " + status;
+        return id + " " + name + tmpPri + " " + tmpTotal + " " + status;
     }
 }
 
@@ -72,14 +82,12 @@ public class sap_xep_ket_qua_tuyen_sinh {
         }
         Collections.sort(arr, new Comparator<Candidate>() {
             @Override
-            public int compare(Candidate o2, Candidate o1) {
+            public int compare(Candidate o1, Candidate o2) {
                 if (o1.getTotal() == o2.getTotal())
                     return o1.getId().compareTo(o2.getId());
                 if (o1.getTotal() - o2.getTotal() > 0)
-                    return 1;
-                else if (o1.getTotal() - o2.getTotal() < 0)
                     return -1;
-                return 0;
+                return 1;
             }
         });
         for (Candidate a : arr)
