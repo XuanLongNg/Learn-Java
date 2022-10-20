@@ -18,17 +18,17 @@ public class so_thuan_nghich_trong_file {
     }
 
     public static void main(String[] args) throws IOException, ParseException, ClassNotFoundException {
-        Scanner input = new Scanner(System.in);
-        ArrayList<Integer> arr1 = new ArrayList<Integer>(), arr2 = new ArrayList<Integer>();
-        for (int i = 0; i < 6; i++)
-            arr1.add(input.nextInt());
-        for (int i = 0; i < 6; i++)
-            arr2.add(input.nextInt());
-        // ObjectInputStream file1 = new ObjectInputStream(new
-        // FileInputStream("DATA1.in")),
-        // file2 = new ObjectInputStream(new FileInputStream("DATA2.in"));
-        // ArrayList<Integer> arr1 = (ArrayList<Integer>) file1.readObject(),
-        // arr2 = (ArrayList<Integer>) file2.readObject();
+        // Scanner input = new Scanner(System.in);
+        // ArrayList<Integer> arr1 = new ArrayList<Integer>(), arr2 = new
+        // ArrayList<Integer>();
+        // for (int i = 0; i < 6; i++)
+        // arr1.add(input.nextInt());
+        // for (int i = 0; i < 6; i++)
+        // arr2.add(input.nextInt());
+        ObjectInputStream file1 = new ObjectInputStream(new FileInputStream("DATA1.in")),
+                file2 = new ObjectInputStream(new FileInputStream("DATA2.in"));
+        ArrayList<Integer> arr1 = (ArrayList<Integer>) file1.readObject(),
+                arr2 = (ArrayList<Integer>) file2.readObject();
         Map<Integer, Integer> map1 = new TreeMap<Integer, Integer>(), map2 = new TreeMap<Integer, Integer>();
         for (Integer i : arr1) {
             if (check(i) && map1.containsKey(i)) {
@@ -46,11 +46,13 @@ public class so_thuan_nghich_trong_file {
         for (Integer i : map1.keySet()) {
             if (count == 10)
                 break;
-            count++;
             // System.out.println(i + " " + check[i] + " " + check[1000000 - i] + " " +
             // map2.containsKey(1000000 - i));
-            if (map2.containsKey(i))
+            if (map2.containsKey(i)) {
+
+                count++;
                 System.out.println(i + " " + (map1.get(i) + map2.get(i)));
+            }
         }
     }
 }
