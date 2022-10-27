@@ -1,0 +1,1 @@
+{"name":"Local: chuan_hoa_va_sap_xep","url":"d:\\Learn Java\\chuan_hoa_va_sap_xep.java","tests":[{"id":1666881879710,"input":"  nguyEn    ManH   son\n ngo MINH                 tuAn\n         nguyen manh hung\nTRAN TRUNG DUNG","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\chuan_hoa_va_sap_xep.java","group":"local","local":true}

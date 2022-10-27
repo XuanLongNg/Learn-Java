@@ -1,83 +1,127 @@
 import java.util.*;
 
-class Rectange {
-    private int width;
-    private int height;
+abstract class Shape {
+    abstract void draw();
 
-    public Rectange() {
-        width = 1;
-        height = 1;
-    }
+    abstract double perimeter();
 
-    public Rectange(int width, int height) {
+    abstract double area();
+}
+
+class Rectangle extends Shape {
+    private double width, height;
+
+    Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
+    }
+
+    @Override
+    void draw() {
+        System.out.println("Drawing Rectange...");
+    }
+
+    double perimeter() {
+        return (width + height) * 2;
+    }
+
+    double area() {
+        return width * height;
+    }
+}
+
+class Square extends Shape {
+    private double edge;
+
+    Square(double edge) {
+        this.edge = edge;
+    }
+
+    @Override
+    void draw() {
+        System.out.println("Drawing Square...");
+    }
+
+    double perimeter() {
+        return edge * 4;
+    }
+
+    double area() {
+        return edge * edge;
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    void draw() {
+        System.out.println("Drawing Circle...");
+    }
+
+    double perimeter() {
+        return radius * Math.PI * 2;
+    }
+
+    double area() {
+        return radius * radius * Math.PI;
     }
 }
 
 public class nhap {
-    // public static void main(String args[]) {
-    // Scanner input = new Scanner(System.in);
-    // int x = input.nextInt(), y = input.nextInt();
-    // if (x > 0 && y > 0) {
-    // int area = x * y, parimeter = (x + y) * 2;
-    // System.out.println("Area: " + area + "\n" + "Parimeter: " + parimeter);
-    // }
-    // }
+    void BinarySearch(int[] arr, int l, int r, int key) {
+        int mid = (l + r) / 2;
+        while (l < r) {
+            mid = (l + r) / 2;
+            if (arr[mid] >= key)
+                r = mid;
+            else
+                l = mid + 1;
+        }
+        return arr[l] == key;
+    }
 
-    // tong chan tu 1-100
-    // public static void main(String[] args) {
-    // System.out.println(50 * (2 + 100) / 2);
-    // }
+    void quickSort(int Data[], int l, int r) {
+        if (l <= r) {
+            int key = Data[(l + r) / 2];
 
-    // tong boi so 7 tu 1-100
-    // public static void main(String[] args) {
-    // System.out.println(14 * (1 + 98) / 2);
-    // }
+            int i = l;
+            int j = r;
 
-    // giai thua
-    // public static void main(String[] args) {
-    // Scanner input = new Scanner(System.in);
-    // long n = input.nextLong(), ans = 1;
-    // for (int i = 2; i <= n; i++)
-    // ans *= i;
-    // System.out.println(ans);
-    // }
+            while (i <= j) {
+                while (Data[i] < key)
+                    i++;
+                while (Data[j] > key)
+                    j--;
 
-    // GCD 2 so
-    // public static long GCD(long a, long b) {
-    // if (b == 0)
-    // return a;
-    // return GCD(b, a % b);
-    // }
+                if (i <= j) {
+                    swap(Data[i], Data[j]);
+                    i++;
+                    j--;
+                }
+            }
 
-    // public static long LCM(long a, long b) {
-    // return (a * b) / GCD(a, b);
-    // }
+            if (l < j)
+                quickSort(Data, l, j);
+            if (r > i)
+                quickSort(Data, i, r);
+        }
+    }
 
-    // public static void main(String[] args) {
-    // Scanner input = new Scanner(System.in);
-    // long n = input.nextLong(), m = input.nextLong();
-    // System.out.println("GCD: " + GCD(n, m) + "\nLCM: " + LCM(n, m));
-    // }
-
-    // fibonacci thu n
-    // public static void main(String[] args) {
-    // Scanner input = new Scanner(System.in);
-    // long[] fibonacci = new long[92];
-    // fibonacci[0] = 1;
-    // fibonacci[1] = 1;
-    // for (int i = 2; i < 92; i++) {
-    // fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-    // }
-    // int n = input.nextInt();
-    // System.out.println(fibonacci[n - 1]);
-    // }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Currency k;
-        String n = input.nextLine();
-        k.getInstance(n);
-        System.out.println(k + " " + k.getCurrencyCode());
+        Rectangle rectangle = new Rectangle(input.nextDouble(), input.nextDouble());
+        Square square = new Square(input.nextDouble());
+        Circle circle = new Circle(input.nextDouble());
+        rectangle.draw();
+        System.out.printf("Perimeter: %.3f\nArea: %.3f\n", rectangle.perimeter(), rectangle.area());
+        square.draw();
+        System.out.printf("Perimeter: %.3f\nArea: %.3f\n", square.perimeter(), square.area());
+        circle.draw();
+        System.out.printf("Perimeter: %.3f\nArea: %.3f\n", circle.perimeter(), circle.area());
     }
 }

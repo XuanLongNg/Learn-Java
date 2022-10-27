@@ -1,0 +1,1 @@
+{"name":"Local: danh_sach_ca_thi","url":"d:\\Learn Java\\danh_sach_ca_thi.java","tests":[{"id":1666881450674,"input":"2\n09/01/2022\n15:30\n70172\n09/01/2022\n10:00\n70279","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\danh_sach_ca_thi.java","group":"local","local":true}
