@@ -1,0 +1,1 @@
+{"name":"Local: sap_xep_ma_tran","url":"d:\\Learn Java\\sap_xep_ma_tran.java","tests":[{"id":1666948522550,"input":"1\n2 2 1\n90 49 85 88","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\sap_xep_ma_tran.java","group":"local","local":true}

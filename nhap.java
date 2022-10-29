@@ -1,127 +1,176 @@
 import java.util.*;
 
-abstract class Shape {
-    abstract void draw();
+class Node {
+    int value;
+    Node left;
+    Node right;
 
-    abstract double perimeter();
-
-    abstract double area();
+    public Node(int value) {
+        this.value = value;
+        left = null;
+        right = null;
+    }
+    // public Node getNode(){
+    // return
+    // }
 }
 
-class Rectangle extends Shape {
-    private double width, height;
+class BinarySearchTree {
+    Node node;
+    int size;
 
-    Rectangle(double width, double height) {
-        this.width = width;
-        this.height = height;
+    public BinarySearchTree() {
+        node = null;
+        size = 0;
     }
 
-    @Override
-    void draw() {
-        System.out.println("Drawing Rectange...");
+    public BinarySearchTree(Node node, int size) {
+        this.node = node;
+        this.size = size;
     }
 
-    double perimeter() {
-        return (width + height) * 2;
+    public Node add(Node lct, int value) {
+        if (lct == null) {
+            return new Node(value);
+        } else {
+            if (value < lct.value)
+                lct.left = add(lct.left, value);
+            else if (value > lct.value)
+                lct.right = add(lct.right, value);
+            else
+                return lct;
+        }
+        return lct;
     }
 
-    double area() {
-        return width * height;
-    }
-}
-
-class Square extends Shape {
-    private double edge;
-
-    Square(double edge) {
-        this.edge = edge;
+    void PrintLNR(Node k) {
+        if (k == null)
+            return;
+        PrintLNR(k.left);
+        System.out.print(k.value + " ");
+        PrintLNR(k.right);
     }
 
-    @Override
-    void draw() {
-        System.out.println("Drawing Square...");
+    void PrintLRN(Node k) {
+        if (k == null)
+            return;
+        PrintLNR(k.left);
+        PrintLNR(k.right);
+        System.out.print(k.value + " ");
     }
 
-    double perimeter() {
-        return edge * 4;
-    }
-
-    double area() {
-        return edge * edge;
-    }
-}
-
-class Circle extends Shape {
-    private double radius;
-
-    Circle(double radius) {
-        this.radius = radius;
-    }
-
-    @Override
-    void draw() {
-        System.out.println("Drawing Circle...");
-    }
-
-    double perimeter() {
-        return radius * Math.PI * 2;
-    }
-
-    double area() {
-        return radius * radius * Math.PI;
+    void PrintNLR(Node k) {
+        if (k == null)
+            return;
+        System.out.print(k.value + " ");
+        PrintLNR(k.left);
+        PrintLNR(k.right);
     }
 }
+// class Double_Linked_List {
+// private Node node;
+// private int size;
+
+// public Double_Linked_List() {
+// node = null;
+// size = 0;
+// }
+
+// public void add(int x) {
+// Node ans = new Node(x);
+// if (node == null) {
+// node = ans;
+// } else {
+// Node tmp = node;
+// while (tmp.next != null) {
+// tmp = tmp.next;
+// }
+// tmp.next = ans;
+// ans.pre = tmp;
+// }
+// }
+
+// public void remove(int lct) {
+// Node tmp = node;
+// for (int i = 0; i < lct - 1; i++) {
+// tmp = tmp.next;
+// }
+// Node tmp1 = tmp.next.next;
+// tmp.next = tmp1;
+// tmp1.pre = tmp;
+// }
+
+// public void Print() {
+// while (node != null) {
+// System.out.print(node.value + " ");
+// node = node.next;
+// }
+// System.out.println();
+// }
+// }
+// class LinkedList {
+// private Node node;
+// private int size;
+
+// public LinkedList() {
+// node = null;
+// size = 0;
+// }
+
+// public LinkedList(Node node, int size) {
+// this.node = node;
+// this.size = size;
+// }
+
+// public Node getHead() {
+// return node;
+// }
+
+// public void add(int x) {
+// Node ans = new Node(x);
+// if (node == null) {
+// node = ans;
+// } else {
+// Node tmp = node;
+// while (tmp.next != null) {
+// tmp = tmp.next;
+// }
+// tmp.next = ans;
+// }
+// }
+
+// public void pop() {
+// Node tmp = node;
+// while (tmp.next.next != null)
+// tmp = tmp.next;
+// tmp.next = null;
+// }
+
+// public void Print() {
+// while (node != null) {
+// System.out.print(node.value + " ");
+// node = node.next;
+// }
+// System.out.println();
+// }
+// }
 
 public class nhap {
-    void BinarySearch(int[] arr, int l, int r, int key) {
-        int mid = (l + r) / 2;
-        while (l < r) {
-            mid = (l + r) / 2;
-            if (arr[mid] >= key)
-                r = mid;
-            else
-                l = mid + 1;
-        }
-        return arr[l] == key;
-    }
-
-    void quickSort(int Data[], int l, int r) {
-        if (l <= r) {
-            int key = Data[(l + r) / 2];
-
-            int i = l;
-            int j = r;
-
-            while (i <= j) {
-                while (Data[i] < key)
-                    i++;
-                while (Data[j] > key)
-                    j--;
-
-                if (i <= j) {
-                    swap(Data[i], Data[j]);
-                    i++;
-                    j--;
-                }
-            }
-
-            if (l < j)
-                quickSort(Data, l, j);
-            if (r > i)
-                quickSort(Data, i, r);
-        }
-    }
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Rectangle rectangle = new Rectangle(input.nextDouble(), input.nextDouble());
-        Square square = new Square(input.nextDouble());
-        Circle circle = new Circle(input.nextDouble());
-        rectangle.draw();
-        System.out.printf("Perimeter: %.3f\nArea: %.3f\n", rectangle.perimeter(), rectangle.area());
-        square.draw();
-        System.out.printf("Perimeter: %.3f\nArea: %.3f\n", square.perimeter(), square.area());
-        circle.draw();
-        System.out.printf("Perimeter: %.3f\nArea: %.3f\n", circle.perimeter(), circle.area());
+        // String datatype = input.nextLine();
+        int n = Integer.valueOf(input.nextLine());
+        BinarySearchTree k = new BinarySearchTree();
+        for (int i = 0; i < n; i++) {
+            k.node = k.add(k.node, Integer.valueOf(input.nextLine()));
+        }
+        // k.remove(2);
+        k.PrintLNR(k.node);
+        System.out.println();
+        k.PrintLRN(k.node);
+        System.out.println();
+        k.PrintNLR(k.node);
+        // Node<Integer> node = new Node(n);
+        // System.out.println(node);
     }
 }

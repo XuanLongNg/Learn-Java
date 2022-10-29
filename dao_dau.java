@@ -8,8 +8,17 @@ public class dao_dau {
         for (int i = 0; i < n; i++)
             a.add(input.nextInt());
         Collections.sort(a);
-        for (int i = 0; i < k; i++)
-            a.set(i, -a.get(i));
+        for (int j = 0; j < n && k > 0; j++) {
+            if (a.get(j) < 0) {
+                a.set(j, -a.get(j));
+                k--;
+            } else
+                break;
+
+        }
+        Collections.sort(a);
+        if (k % 2 == 1)
+            a.set(0, -a.get(0));
         long total = 0;
         for (int i = 0; i < n; i++)
             total += a.get(i);

@@ -1,1 +1,1 @@
-{"name":"Local: dao_dau","url":"d:\\Learn Java\\dao_dau.java","tests":[{"id":1663929875169,"input":"3 1\n4 6 -2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\dao_dau.java","group":"local","local":true}
+{"name":"Local: dao_dau","url":"d:\\Learn Java\\dao_dau.java","tests":[{"id":1663929875169,"input":"3 1\n4 6 -2","output":""},{"id":1667029949383,"input":"3 2\n4 -6 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Learn Java\\dao_dau.java","group":"local","local":true}

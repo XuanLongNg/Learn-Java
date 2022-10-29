@@ -1,6 +1,24 @@
 import java.util.*;
 
+class Pair {
+    int x, y;
+
+    Pair(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
 public class liet_ke_va_dem {
+    public static boolean isInteger(String s) {
+        try {
+            int x = Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
     public static boolean check(int n) {
         int tmp = n, pre = tmp % 10, next;
         tmp /= 10;
@@ -16,26 +34,35 @@ public class liet_ke_va_dem {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Map<Integer, Integer> arr = new HashMap<Integer, Integer>();
+        ArrayList<Pair> arr = new ArrayList<>();
         int Max = 0;
         while (input.hasNext()) {
             String[] tmp = input.nextLine().split(" ");
             for (String i : tmp) {
+                if (!isInteger(i))
+                    continue;
                 int index = Integer.valueOf(i);
                 if (check(index)) {
-                    if (arr.containsKey(index))
-                        arr.put(index, arr.get(index) + 1);
-                    else
-                        arr.put(index, 1);
-                    Max = Math.max(Max, i.length());
+                    boolean found = false;
+                    for (int j = 0; j < arr.size(); j++) {
+                        if (arr.get(j).x == index) {
+                            arr.set(j, new Pair(arr.get(j).x, arr.get(j).y + 1));
+                            found = true;
+                        }
+                    }
+                    if (!found)
+                        arr.add(new Pair(index, 1));
                 }
             }
         }
-        arr.keySet().iterator().nextstream()
-                .sorted(Map.Entry.comparingByValue())
-                .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
-        for (Integer i : arr.keySet()) {
-            System.out.println(i + " " + arr.get(i));
+        Collections.sort(arr, new Comparator<Pair>() {
+            @Override
+            public int compare(Pair o1, Pair o2) {
+                return o2.y - o1.y;
+            }
+        });
+        for (Pair i : arr) {
+            System.out.println(i.x + " " + i.y);
         }
 
     }
